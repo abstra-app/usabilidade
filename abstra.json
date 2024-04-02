@@ -1,0 +1,144 @@
+{
+  "workspace": {
+    "id": null,
+    "name": "Untitled Workspace",
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_color": null,
+    "font_family": null,
+    "sidebar": [
+      {
+        "id": "11aff1ec-2679-4d26-884d-dfa9b0de99ea",
+        "name": "Cadastro",
+        "path": "cadastro",
+        "type": "form",
+        "visible": false
+      }
+    ]
+  },
+  "visualization": [],
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "11aff1ec-2679-4d26-884d-dfa9b0de99ea",
+      "path": "cadastro",
+      "title": "Cadastro",
+      "is_initial": true,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": "Obrigado",
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "cadastro.py",
+      "workflow_position": [
+        -736,
+        0
+      ],
+      "transitions": [
+        {
+          "target_id": "b5bc7f8a-4c1b-47d4-bbd3-94b17f33cb7c",
+          "target_type": "forms",
+          "type": "forms:finished",
+          "id": "voqioy9",
+          "condition_value": null
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
+    },
+    {
+      "id": "b5bc7f8a-4c1b-47d4-bbd3-94b17f33cb7c",
+      "path": "aprovacao",
+      "title": "Aprova\u00e7\u00e3o",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "aprovacao.py",
+      "workflow_position": [
+        -384,
+        0
+      ],
+      "transitions": [
+        {
+          "target_id": "b67154d6-ea48-41d3-98ba-1b0349ad6efd",
+          "target_type": "conditions",
+          "type": "forms:finished",
+          "id": "agupg40",
+          "condition_value": null
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
+    }
+  ],
+  "scripts": [
+    {
+      "id": "14895f3c-1c81-4e3f-b970-16c36b97bf72",
+      "file": "new_script_x06jtib.py",
+      "title": "Email: aprovado",
+      "is_initial": false,
+      "workflow_position": [
+        -64,
+        -192
+      ],
+      "transitions": []
+    },
+    {
+      "id": "da05fd64-e01a-47ea-9df5-a2049edf2ab6",
+      "file": "new_script_qpmjc42.py",
+      "title": "Email: reprovado",
+      "is_initial": false,
+      "workflow_position": [
+        -64,
+        224
+      ],
+      "transitions": []
+    }
+  ],
+  "iterators": [],
+  "conditions": [
+    {
+      "id": "b67154d6-ea48-41d3-98ba-1b0349ad6efd",
+      "variable_name": "status",
+      "workflow_position": [
+        -64,
+        0
+      ],
+      "transitions": [
+        {
+          "target_id": "14895f3c-1c81-4e3f-b970-16c36b97bf72",
+          "target_type": "scripts",
+          "type": "conditions:patternMatched",
+          "id": "yf4tggs",
+          "condition_value": "aprovado"
+        },
+        {
+          "target_id": "da05fd64-e01a-47ea-9df5-a2049edf2ab6",
+          "target_type": "scripts",
+          "type": "conditions:patternMatched",
+          "id": "l1vv3nw",
+          "condition_value": "reprovado"
+        }
+      ]
+    }
+  ],
+  "version": "5.0"
+}
