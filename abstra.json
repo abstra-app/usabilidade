@@ -44,8 +44,8 @@
       "restart_button_text": null,
       "file": "cadastro.py",
       "workflow_position": [
-        -736.0,
-        0.0
+        -736,
+        0
       ],
       "transitions": [
         {
@@ -81,18 +81,10 @@
       "restart_button_text": null,
       "file": "aprovacao.py",
       "workflow_position": [
-        -384.0,
-        0.0
+        -384,
+        0
       ],
-      "transitions": [
-        {
-          "target_id": "b67154d6-ea48-41d3-98ba-1b0349ad6efd",
-          "target_type": "conditions",
-          "type": "forms:finished",
-          "id": "agupg40",
-          "condition_value": null
-        }
-      ],
+      "transitions": [],
       "notification_trigger": {
         "variable_name": "assignee_emails",
         "enabled": false
@@ -103,57 +95,9 @@
       }
     }
   ],
-  "scripts": [
-    {
-      "id": "14895f3c-1c81-4e3f-b970-16c36b97bf72",
-      "file": "email_aprovado.py",
-      "title": "Email: aprovado",
-      "is_initial": false,
-      "workflow_position": [
-        -64.0,
-        -192.0
-      ],
-      "transitions": []
-    },
-    {
-      "id": "da05fd64-e01a-47ea-9df5-a2049edf2ab6",
-      "file": "email_reprovado.py",
-      "title": "Email: reprovado",
-      "is_initial": false,
-      "workflow_position": [
-        -64.0,
-        224.0
-      ],
-      "transitions": []
-    }
-  ],
+  "scripts": [],
   "iterators": [],
-  "conditions": [
-    {
-      "id": "b67154d6-ea48-41d3-98ba-1b0349ad6efd",
-      "variable_name": "status",
-      "workflow_position": [
-        -64.0,
-        0.0
-      ],
-      "transitions": [
-        {
-          "target_id": "14895f3c-1c81-4e3f-b970-16c36b97bf72",
-          "target_type": "scripts",
-          "type": "conditions:patternMatched",
-          "id": "yf4tggs",
-          "condition_value": "aprovado"
-        },
-        {
-          "target_id": "da05fd64-e01a-47ea-9df5-a2049edf2ab6",
-          "target_type": "scripts",
-          "type": "conditions:patternMatched",
-          "id": "l1vv3nw",
-          "condition_value": "reprovado"
-        }
-      ]
-    }
-  ],
+  "conditions": [],
   "signup_policy": {
     "email_patterns": []
   },
